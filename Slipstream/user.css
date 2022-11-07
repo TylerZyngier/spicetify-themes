@@ -4,21 +4,105 @@
   --border-radius-3: 4px;
   --font-family: "Segoe UI", sans-serif;
   --font-size: 14px;
-  --shadow: rgba(0, 0, 0, 0.25);
+  --shadow: rgba(0, 0, 0, 0.05);
   --box-shadow: 0px 0px 8px 4px var(--shadow);
 }
 
 * {
   font-family: var(--font-family) !important;
   line-height: normal;
-  box-shadow: none !important;
+  /* box-shadow: none !important; */
 }
 
 /* || COLORS */
 
+.encore-dark-theme,
+.encore-dark-theme .encore-base-set {
+  --background-base: #121212;
+  --background-highlight: #1a1a1a;
+  --background-press: #000;
+  --background-elevated-base: #242424;
+  --background-elevated-highlight: #2a2a2a;
+  --background-elevated-press: #000;
+  --background-tinted-base: hsla(0, 0%, 100%, 0.07);
+  --background-tinted-highlight: hsla(0, 0%, 100%, 0.1);
+  --background-tinted-press: hsla(0, 0%, 100%, 0.04);
+  --background-unsafe-for-small-text-base: #121212;
+  --background-unsafe-for-small-text-highlight: #121212;
+  --background-unsafe-for-small-text-press: #121212;
+  --text-base: #fff;
+  --text-subdued: #a7a7a7;
+  --text-bright-accent: var(--spice-accent);
+  --text-negative: #f15e6c;
+  --text-warning: #ffa42b;
+  --text-positive: var(--spice-accent);
+  --text-announcement: #3d91f4;
+  --essential-base: #fff;
+  --essential-subdued: #727272;
+  --essential-bright-accent: var(--spice-accent);
+  --essential-negative: #e91429;
+  --essential-warning: #ffa42b;
+  --essential-positive: var(--spice-accent);
+  --essential-announcement: #0d72ea;
+  --decorative-base: #fff;
+  --decorative-subdued: #292929;
+}
+
+.encore-dark-theme .encore-bright-accent-set {
+  --background-base: var(--spice-accent);
+  --background-highlight: var(--spice-accent);
+  --background-press: var(--spice-accent);
+  --background-elevated-base: var(--spice-accent);
+  --background-elevated-highlight: var(--spice-accent);
+  --background-elevated-press: var(--spice-accent);
+  --background-tinted-base: var(--spice-accent);
+  --background-tinted-highlight: var(--spice-accent);
+  --background-tinted-press: var(--spice-accent);
+  --background-unsafe-for-small-text-base: var(--spice-accent);
+  --background-unsafe-for-small-text-highlight: var(--spice-accent);
+  --background-unsafe-for-small-text-press: var(--spice-accent);
+  --text-base: #000;
+  --text-subdued: #000;
+  --text-bright-accent: #000;
+  --text-negative: #000;
+  --text-warning: #000;
+  --text-positive: #000;
+  --text-announcement: #000;
+  --essential-base: #000;
+  --essential-subdued: #000;
+  --essential-bright-accent: #000;
+  --essential-negative: #000;
+  --essential-warning: #000;
+  --essential-positive: #000;
+  --essential-announcement: #000;
+  --decorative-base: #000;
+  --decorative-subdued: #1abc54;
+}
+
 /* Progress bar */
 .progress-bar {
-  --fg-color: var(--spice-accent);
+  --is-active-fg-color: var(--spice-accent);
+}
+
+/* Player liked heart */
+.control-button-heart[aria-checked="true"] {
+  color: var(--spice-accent);
+}
+
+/* Control buttons */
+.control-button--active {
+  fill: var(--spice-accent) !important;
+  color: var(--spice-accent) !important;
+}
+
+/* Playing Icon */
+.main-trackList-playingIcon {
+  filter: saturate(0%);
+}
+
+/* Playing Icon */
+.main-trackList-playingTrack {
+  filter: saturate(0%);
 }
 
 /* ... END COLORS */
@@ -32,6 +116,19 @@
   > .os-scrollbar-handle {
   border-radius: 4px;
   width: 6px;
+}
+
+.os-theme-spotify.os-host-transition
+  > .os-scrollbar-vertical
+  > .os-scrollbar-track
+  > .os-scrollbar-handle:active {
+  background-color: var(--spice-accent);
+}
+
+.os-theme-spotify.os-host-transition
+  > .os-scrollbar-vertical
+  > .os-scrollbar-track
+  > .os-scrollbar-handle:hover {
   background-color: var(--spice-accent);
 }
 
@@ -53,6 +150,12 @@
   padding: 0px;
 }
 
+.main-trackList-trackListHeaderRow,
+.main-trackCreditsModal-header {
+  background-color: transparent;
+  border-bottom: none;
+}
+
 /* Right aligned hearts on tracks, NEED TO REMOVE MORE BUTTON*/
 /* .main-addButton-button.main-trackList-rowHeartButton {
   position: absolute !important;
@@ -63,9 +166,19 @@
 
 /* || TOP BAR */
 
+.Root__top-bar {
+  box-shadow: var(--box-shadow);
+}
+
+.main-topBar-background,
+.main-topBar-overlay {
+  background-color: var(--spice-bg-2) !important;
+  opacity: 1 !important;
+}
+
 .main-topBar-button,
 .main-userWidget-box {
-  background-color: var(--spice-bg-2);
+  background-color: transparent;
 }
 
 .main-entityHeader-topbarTitle,
@@ -94,13 +207,38 @@
   display: inline-flex !important;
 }
 
+.main-topBar-historyButtons .main-topBar-back {
+  display: inline-flex !important;
+  background-color: transparent;
+}
+
+.main-topBar-historyButtons button:nth-child(1) {
+  margin-left: 0px;
+  background-color: transparent !important;
+  padding: 5px;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.main-topBar-historyButtons button:nth-child(2) {
+  background-color: transparent !important;
+  padding: 5px;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.main-userWidget-displayName,
+.main-userWidget-chevron {
+  display: none !important;
+}
+
 /* Search */
 .x-searchInput-searchInputInput,
 .dIwMadpRrW1PwEwEeAbN,
 .G9iUss4eOSpJyn2VBzsS {
-  background-color: var(--spice-bg-2);
+  background-color: var(--spice-bg-1);
   color: var(--spice-text) !important;
-  border: 1px solid var(--spice-accent);
+  border: 1px solid var(--spice-text);
   border-radius: 20px !important;
   padding-right: 0px;
   padding-left: 12px;
@@ -187,6 +325,8 @@
   background-color: var(--spice-bg-2);
   display: flex;
   height: 100vh;
+  min-width: 200px;
+  box-shadow: var(--box-shadow);
 }
 
 /* Sidebar divider styling */
@@ -200,24 +340,6 @@
   background: linear-gradient(180deg, var(--shadow), transparent);
   margin-bottom: 5;
 }
-
-/* .main-rootlist-rootlistDivider {
-  display: block;
-  background-color: var(--spice-bg-2);
-  height: 40px;
-  width: 100%;
-  margin: 0;
-}
-
-.main-rootlist-rootlistDivider::before {
-  font-weight: 700;
-  font-family: var(--font-family);
-  font-size: var(--font-size);
-  position: absolute;
-  content: "Library";
-  left: 25px;
-  top: 10px;
-} */
 
 /* Create playlist button icon styling */
 .main-createPlaylistButton-createPlaylistIcon {
@@ -238,9 +360,9 @@
 /* || HOME */
 
 .Root__main-view {
-  background-color: var(--spice-bg-1);
+  background-color: var(--spice-bg-1) !important;
+  height: 100%;
 }
-
 /* Remove top gradient */
 .main-entityHeader-backgroundColor {
   display: none !important;
@@ -295,7 +417,7 @@
 /* connect device menu */
 .connect-device-list-container {
   border-radius: var(--border-radius-1);
-  border: 1px solid var(--spice-accent);
+  /* border: 1px solid var(--spice-accent); */
 }
 
 .connect-device-list-item {
@@ -324,14 +446,14 @@
 }
 
 .main-connectBar-connectBar {
-  background-color: var(--spice-accent) !important;
+  /* background-color: var(--spice-accent) !important; */
   border-radius: 4px;
   height: 28px;
   width: fit-content;
   padding: 8px;
   position: absolute;
-  right: 20px;
-  bottom: 120px;
+  bottom: 100px;
+  right: 0px;
   color: black !important;
   box-shadow: var(--box-shadow) !important;
 }
@@ -347,3 +469,22 @@
 }
 
 /* ... END PLAYER */
+
+/* || MISCELLANEOUS */
+
+/* Menu hidden under the button with account name - font size and family unification */
+.ellipsis-one-line {
+  font-family: var(--font-family);
+}
+
+.ellipsis-one-line.main-type-mesto {
+  font-size: 14px;
+}
+
+/* Removal of empty space above playlist cover and title on narrow viewports */
+.main-entityHeader-container.main-entityHeader-nonWrapped {
+  min-height: 325px;
+  height: 15vh;
+}
+
+/* ... END MISCELLANEOUS */
