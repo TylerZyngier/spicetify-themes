@@ -1,0 +1,349 @@
+:root {
+  --border-radius-1: 8px;
+  --border-radius-2: 4px;
+  --border-radius-3: 4px;
+  --font-family: "Segoe UI", sans-serif;
+  --font-size: 14px;
+  --shadow: rgba(0, 0, 0, 0.25);
+  --box-shadow: 0px 0px 8px 4px var(--shadow);
+}
+
+* {
+  font-family: var(--font-family) !important;
+  line-height: normal;
+  box-shadow: none !important;
+}
+
+/* || COLORS */
+
+/* Progress bar */
+.progress-bar {
+  --fg-color: var(--spice-accent);
+}
+
+/* ... END COLORS */
+
+/* || GENERAL */
+
+/* Scrollbars */
+.os-theme-spotify.os-host-transition
+  > .os-scrollbar-vertical
+  > .os-scrollbar-track
+  > .os-scrollbar-handle {
+  border-radius: 4px;
+  width: 6px;
+  background-color: var(--spice-accent);
+}
+
+.os-scrollbar-track {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+/* Tracklists */
+.main-trackList-indexable .main-virtualScrollList-wrapper {
+  background-color: var(--spice-bg-2);
+  border-radius: var(--border-radius-2);
+  padding: 8px;
+}
+
+.main-trackList-indexable .main-rootlist-wrapper {
+  background-color: var(--spice-bg-2);
+  border-radius: var(--border-radius-2);
+  padding: 0px;
+}
+
+/* Right aligned hearts on tracks, NEED TO REMOVE MORE BUTTON*/
+/* .main-addButton-button.main-trackList-rowHeartButton {
+  position: absolute !important;
+  right: 0px !important;
+} */
+
+/* ... END GLOBAL */
+
+/* || TOP BAR */
+
+.main-topBar-button,
+.main-userWidget-box {
+  background-color: var(--spice-bg-2);
+}
+
+.main-entityHeader-topbarTitle,
+.main-topBar-topbarTitle {
+  font-size: 16px;
+  font-weight: 400;
+  padding-left: 4px;
+  position: relative;
+  top: 5px;
+}
+
+.main-playButton-PlayButton.main-playButton-primary {
+  padding: 12px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  height: auto;
+}
+
+.main-topBar-topbarContent
+  > .main-playButton-PlayButton.main-playButton-primary {
+  margin-top: 10px;
+}
+
+/* Fix forward button not showing when application width too small */
+.main-topBar-historyButtons .main-topBar-forward {
+  display: inline-flex !important;
+}
+
+/* Search */
+.x-searchInput-searchInputInput,
+.dIwMadpRrW1PwEwEeAbN,
+.G9iUss4eOSpJyn2VBzsS {
+  background-color: var(--spice-bg-2);
+  color: var(--spice-text) !important;
+  border: 1px solid var(--spice-accent);
+  border-radius: 20px !important;
+  padding-right: 0px;
+  padding-left: 12px;
+  transition: background-color ease-in 167ms;
+  height: 34px;
+}
+
+.x-searchInput-searchInputInput:focus,
+.dIwMadpRrW1PwEwEeAbN:focus,
+.G9iUss4eOSpJyn2VBzsS:focus {
+  background-color: var(--spice-bg-2);
+  border: var(--spice-accent) solid 2px;
+}
+
+.x-searchInput-searchInput,
+.g3Xinb8x23n81ejvS9Uj {
+  -webkit-box-flex: 1;
+  width: 40vw;
+}
+
+.x-searchInput-searchInputIconContainer,
+.t2K4_iLmAyDtH7mcT5Wy {
+  flex-direction: row-reverse;
+}
+
+.H6jh9Xd7DNOq3NsLDmCB {
+  flex: 0 !important;
+}
+
+.x-searchInput-searchInputSearchIcon {
+  /* -webkit-mask-image: url("./fluentui-system-icons/ic_fluent_search_16_regular.svg"); */
+  display: none;
+  background-color: var(--spice-subtext) !important;
+  flex: 0;
+  transform: scaleX(-1);
+  height: 16px;
+  width: 16px;
+}
+
+.x-searchInput-searchInputSearchIcon path {
+  display: none;
+}
+
+.x-searchInput-searchInputClearButton {
+  margin-left: 5px;
+  margin-right: 12px;
+  height: 20px;
+}
+
+.x-searchInput-searchInputClearButton path,
+.g7ggq46CbOli19ZxJlQe .BDcKgSW_ys9_Hj2DwDBW path {
+  display: block !important;
+  stroke: var(--spice-subtext) !important;
+  stroke-width: 1.3px;
+}
+
+.x-searchInput-searchInputClearButton svg,
+.g7ggq46CbOli19ZxJlQe .BDcKgSW_ys9_Hj2DwDBW svg {
+  padding: 3px;
+}
+
+.x-searchInput-searchInputSearchIcon,
+.x-searchInput-searchInputInput::placeholder,
+.x-searchInput-searchInputClearButton {
+  color: var(--spice-text) !important;
+}
+
+.x-searchResultsTracks-root .main-gridContainer-gridContainer {
+  padding: 8px;
+}
+
+.main-heroCard-card,
+.x-searchResultsTracks-root .main-gridContainer-gridContainer {
+  background-color: var(--spice-bg-2);
+  border-radius: var(--border-radius-1);
+}
+
+/* ... END TOP BAR */
+
+/* || SIDE BAR */
+
+/* Sidebar styling / formatting */
+.Root__nav-bar {
+  background-color: var(--spice-bg-2);
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar divider styling */
+.main-rootlist-rootlistDivider {
+  background-color: transparent;
+  margin-bottom: 9px;
+}
+
+/* Sidebar divider shadow */
+.main-rootlist-rootlistDivider + div {
+  background: linear-gradient(180deg, var(--shadow), transparent);
+  margin-bottom: 5;
+}
+
+/* .main-rootlist-rootlistDivider {
+  display: block;
+  background-color: var(--spice-bg-2);
+  height: 40px;
+  width: 100%;
+  margin: 0;
+}
+
+.main-rootlist-rootlistDivider::before {
+  font-weight: 700;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  position: absolute;
+  content: "Library";
+  left: 25px;
+  top: 10px;
+} */
+
+/* Create playlist button icon styling */
+.main-createPlaylistButton-createPlaylistIcon {
+  color: var(--spice-text) !important;
+  background: transparent !important;
+  transform: scale(1.9) !important;
+}
+
+/* Liked songs button icon styling */
+.main-likedSongsButton-likedSongsIcon {
+  color: var(--spice-text) !important;
+  background: transparent !important;
+  transform: scale(1.9) !important;
+}
+
+/* ... END SIDE BAR */
+
+/* || HOME */
+
+.Root__main-view {
+  background-color: var(--spice-bg-1);
+}
+
+/* Remove top gradient */
+.main-entityHeader-backgroundColor {
+  display: none !important;
+}
+.main-actionBarBackground-background {
+  display: none !important;
+}
+.main-home-homeHeader {
+  display: none !important;
+}
+
+/* ... END HOME */
+
+/* || PLAYER */
+.Root__now-playing-bar {
+  margin: 0px 20px 20px 20px;
+  position: fixed;
+  width: calc(100% - 40px);
+  bottom: 0px;
+}
+
+.main-nowPlayingBar-container {
+  background-color: var(--spice-bg-3);
+  box-shadow: var(--box-shadow) !important;
+  border: 1px var(--spice-accent);
+  border-radius: var(--border-radius-1);
+  border-top: 0px;
+}
+
+/* Rotating Cover Art */
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cover-art {
+  animation: rotating 8s linear infinite !important;
+  clip-path: circle(50% at 50% 50%) !important;
+}
+
+/* Center expand button */
+.main-nowPlayingWidget-nowPlaying div button {
+  top: 30% !important;
+  left: 30% !important;
+  background-color: var(--spice-bg-1) !important;
+}
+
+/* connect device menu */
+.connect-device-list-container {
+  border-radius: var(--border-radius-1);
+  border: 1px solid var(--spice-accent);
+}
+
+.connect-device-list-item {
+  margin: 0 8px;
+  border-radius: var(--border-radius-2);
+  width: -webkit-fill-available;
+}
+
+.connect-device-list-item:last-child {
+  margin: 0 8px 8px;
+}
+
+.connect-header {
+  display: none;
+}
+
+.connect-device-list-item:focus,
+.connect-device-list-item:hover {
+  background-color: var(--spice-bg-1);
+}
+
+.connect-device-list-item--active,
+.connect-device-list-item--active .connect-device-list-item__icon,
+.connect-device-list-item--active .connect-device-list-item__device-subtitle {
+  color: var(--spice-accent);
+}
+
+.main-connectBar-connectBar {
+  background-color: var(--spice-accent) !important;
+  border-radius: 4px;
+  height: 28px;
+  width: fit-content;
+  padding: 8px;
+  position: absolute;
+  right: 20px;
+  bottom: 120px;
+  color: black !important;
+  box-shadow: var(--box-shadow) !important;
+}
+
+.main-connectBar-connectBar:after {
+  border-bottom: none !important;
+}
+
+.main-connectBar-connectBar .icon,
+.main-connectBar-connectBar .hDgDGI {
+  margin: 0px;
+  margin-right: 8px;
+}
+
+/* ... END PLAYER */
